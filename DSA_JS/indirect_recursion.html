@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indirect Recursion</title>
+</head>
+<body>
+    <h1>Indirect Recursion</h1>
+    <p>Indirect Recursion is a type of recursion in which there are two or more functions and they call each other in a circular manner. In this type of recursion, the functions call each other in a circular manner. The function calls itself and then calls the other function and this process goes on.</p>
+    <h2>Example</h2>
+    <p>Let's take an example of two functions BuyBanana and BuyMore. Function BuyBanana calls function BuyMore and function BuyMore calls function BuyBanana. This is an example of indirect recursion.</p>
+    <input type="button" value="Buy Banana With All Money" onclick="BuyBanana()">
+    <p>Number of bananas: <span id="bananas">0</span></p>
+    <p>Money: <span id="money">100</span></p>
+
+<script>
+    let bananas = 0;
+    let money = 100;
+
+    function updateDisplay(){
+        document.getElementById("bananas").innerHTML = bananas;
+        document.getElementById("money").innerHTML = money;
+    }
+    function BuyBanana(){
+        if(money >= 10){
+            BuyMore();
+        }
+        else{
+            console.log("You don't have enough money to buy a banana");
+            alert("You don't have enough money to buy a banana");
+        }   
+    }
+
+    function BuyMore(){
+            console.log("You have bought a banana");
+            alert(`You have bought ${bananas} bananas`);
+            bananas++;
+            money -= 10;
+            updateDisplay();
+            BuyBanana();
+    }
+    updateDisplay();
+</script>
+</body>
+</html>
