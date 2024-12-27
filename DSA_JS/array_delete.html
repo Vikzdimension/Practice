@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Delete</title>
+</head>
+<body>
+    <h1>Before Delete</h1>
+    <h2>Array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</h2>
+    <input type="text" id="index" placeholder="Enter index to delete" min="0">
+    <button onclick="deleteElement()">Delete</button>
+    <h1>After Delete</h1>
+    <h2 id = 'After'></h2>
+    <script>
+            let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function deleteElement() {
+            let index = document.getElementById('index').value;
+            index = parseInt(index);
+            if(index != NaN && index < 0 || index >= data.length) {
+                alert('Please enter a valid index');
+                return; 
+            }
+
+            console.log(index);
+            // alert('Before Delete: ' + data);
+            for (let i = index; i < data.length - 1; i++) {
+                data[i] = data[i+1];
+            }
+            data.length = data.length - 1;
+            console.log(data);
+            // alert('After Delete: ' + data);
+            document.getElementById('After').innerHTML = data;
+        }
+    </script>    
+</body>
+</html>

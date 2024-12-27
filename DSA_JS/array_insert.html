@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Insert</title>
+</head>
+
+<body>
+    <h1>Array Insert</h1>
+    <input type="number" id="input" placeholder="Enter a number to insert">
+    <input type="number" id="position" placeholder="Enter a position">
+    <button onclick="insertElement()">Insert Element</button>
+
+    <script>
+        function insertElement() {
+            let data = [10, 20, 30, 41, 50, 60, 88, 89];
+            let element = document.getElementById('input').value;
+            element = parseInt(element);
+            let position = document.getElementById('position').value;
+            let length = data.length;
+
+            for(let i = length -1; i >= 0; i--){
+                if(i >= position && typeof parseInt(element) == 'number'){
+                    data[i+1] = data[i];
+                    if(i == position){
+                        data[i] = element;                        
+
+                    }
+                }
+            }
+                console.log(data);
+                document.write(data);            
+        }
+
+    </script>
+</body>
+
+</html>

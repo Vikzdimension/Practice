@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Travel</title>
+</head>
+<body>
+    <h1>Array Travel</h1>
+
+    <input type="text" id="input" placeholder="Enter a number">
+    <button onclick="getElement()">Get Element</button>
+    <script>
+        let data = [1, 2, 3, 4, 5];
+        // // console.table(arr.length);
+        // for (let i = 0; i < arr.length; i++) {
+        // }
+        
+        function getElement(){
+            let el = document.getElementById('input').value;
+
+            if(el < data.length && Number(el) && el >= 0){
+                alert(data[el]);
+            }else{
+                alert('Invalid input');
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Merge</title>
+</head>
+<body>
+    <h1>Array Merge</h1>
+    <p>Array merge is used to merge two or more arrays into a single array.</p>
+    <script>
+        data = [1, 2, 3, 4, 5];
+        data2 = [6, 7, 8, 9, 10];
+        data3 = [];
+        // data3 = data.concat(data2);
+        // data3 = data.join(",");
+        // data3 = data.splice(",");
+        for (let i = 0; i < data.length; i++) {
+            data3[i] = data[i];
+            for (let j = 0; j < data2.length; j++) {
+                data3[data.length+j] = data2[j];
+                // data3.push(data2[j]);
+            }
+        }
+        // data3.reverse();
+        // data3 = [...data, ...data2]
+        document.write(data3);
+        console.info(data3);
+    </script>
+</body>
+</html>
